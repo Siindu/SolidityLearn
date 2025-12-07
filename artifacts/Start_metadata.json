@@ -1,0 +1,72 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_newStatus",
+						"type": "string"
+					}
+				],
+				"name": "setStatus",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "status",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Start.sol": "Start"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Start.sol": {
+			"keccak256": "0xa12e8edb01f04cab75da8ecc2c6dea81fba5db19eacc7b2fe9a45fa8d3ccaca9",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://0692306d50432d82731a50f574e958bef07bf48d7cd17c66ae18572987f7347d",
+				"dweb:/ipfs/QmaJCraQmiL1ocV8zM3Xc8xZisc39ZCwa5BD4eJQKBny4a"
+			]
+		}
+	},
+	"version": 1
+}
