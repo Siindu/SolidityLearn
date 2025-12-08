@@ -4,17 +4,35 @@ pragma solidity >=0.8.2 <0.9.0;
 
 contract Trwitter {
 
-  mapping(address => string[]) public tweets;
+  unit16 constant max-tweet = 280;
+
+  struct Tweet {
+    address author;
+    string content;
+    uint256 timestamp;
+    uint256 like;
+  }
+
+  mapping(address => Tweet[]) public tweets;
+
+  require(byte(_tweet).length <= max-tweet, "Tweet mwlebihi batas maksimum!");
 
   function createTweet(string memory _tweet) public {
-    tweets[msg.sender].push(_tweet);
+    Tweet memory newTweet = Tweet({
+      author: msg.sender,
+      content: _tweet,
+      timestamp: block.timestamp,
+      like: 0
+    });
+
+    tweets[msg.sender].push(newTweet);
   }
 
-  function getTweet(address _owner, uint _i) public view returns(string memory) {
-    return tweets[_owner] [_i];
+  function getTweet(uint _i) public view returns(Tweet memory) {
+    return tweets[_i];
   }
 
-  function getAllTweet(address _owner) public view returns(string[] memory) {
+  function getAllTweet(address _owner) public view returns(Tweet[] memory) {
     return tweets[_owner];
   }
  
