@@ -4,7 +4,7 @@ pragma solidity >=0.8.2 <0.9.0;
 
 contract Trwitter {
 
-  mapping(address => string) public tweets;
+  mapping(address => string[]) public tweets;
 
   function createTweet(string memory _tweet) public {
     tweets[msg.sender].push(_tweet);
