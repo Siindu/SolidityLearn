@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.8.2 <0.9.0;
+pragma solidity >=0.8.19 <0.9.0;
 
 contract Trwitter {
 
-  unit16 constant max-tweet = 280;
+  unit16 constant maxTweet = 280;
 
   struct Tweet {
     address author;
@@ -15,7 +15,7 @@ contract Trwitter {
 
   mapping(address => Tweet[]) public tweets;
 
-  require(byte(_tweet).length <= max-tweet, "Tweet mwlebihi batas maksimum!");
+  require(byte(_tweet).length <= maxTweet, "Tweet mwlebihi batas maksimum!");
 
   function createTweet(string memory _tweet) public {
     Tweet memory newTweet = Tweet({

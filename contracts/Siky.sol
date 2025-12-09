@@ -1,5 +1,5 @@
-// SPDX-License-Identifier: UNLICENSED
-pragma solidity >=0.8.2 <0.9.0;
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.8.19 <0.9.0;
 
 contract Siky {
 
@@ -7,6 +7,8 @@ contract Siky {
   string public symbol = "SIKY";
   uint public decimals = 18;
   uint public  totalSuply;
+  address public  owner;
+  bool public paused;
 
   mapping(address => uint) public balances;
 
@@ -27,7 +29,7 @@ contract Siky {
   }
 
   modifier notPaused() {
-    require(paused == false, "This transaction paused");
+    require(paused == false, "This transaction paused!");
     _;
   }
 
@@ -40,7 +42,7 @@ contract Siky {
   }
 
   // cek saldo
-  function balanceOf(address account) public notPaused returns (uint) {
+  function balanceOf(address account) public view notPaused returns (uint) {
     return balances[account];
   }
 
